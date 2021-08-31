@@ -34,7 +34,14 @@ fi
 # Database and Webserver
 LOCALHOST="http://localhost:8888"
 URL="${LOCALHOST}${PROJECT_PATH}/${DIR_NAME}}"
-DB_NAME=$DIR_NAME
+
+# prepare project path for unique db name
+PROJECT_PATH_FOR_DB=$PROJECT_PATH 
+# eliminiate first /, replace / with -, add a suffix -
+if [[ ${#PROJECT_PATH_FOR_DB} > 0 ]]; then PROJECT_PATH_FOR_DB=${PROJECT_PATH_FOR_DB#/}; PROJECT_PATH_FOR_DB=${PROJECT_PATH_FOR_DB////-}; PROJECT_PATH_FOR_DB="${PROJECT_PATH_FOR_DB}-"
+fi
+
+DB_NAME="${PROJECT_PATH_FOR_DB}${DIR_NAME}"
 
 echo; echo "Installation of a dev-ready fresh WordPress"
 echo "---------------------------------------------------------"; echo
