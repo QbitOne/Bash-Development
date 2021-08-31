@@ -1,10 +1,10 @@
 #!/bin/bash
 # Author: Andreas Geyer
-# Version: 0.1.0
+# Version: 0.1.1
 # Description: 
 # 5-Second WP Installation! Install a fresh WP ready for development 
 
-VERSION=0.1.0
+VERSION=0.1.1
 
 if ! hash wp 2>/dev/null; then echo "ERROR"; echo "WP CLI command not found"; exit 1
 fi
@@ -33,7 +33,7 @@ fi
 
 # Database and Webserver
 LOCALHOST="http://localhost:8888"
-URL="${LOCALHOST}${PROJECT_PATH}/${DIR_NAME}}"
+URL="${LOCALHOST}${PROJECT_PATH}/${DIR_NAME}"
 
 # prepare project path for unique db name
 PROJECT_PATH_FOR_DB=$PROJECT_PATH 
