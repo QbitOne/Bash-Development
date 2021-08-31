@@ -33,7 +33,7 @@ fi
 
 # Database and Webserver
 LOCALHOST="http://localhost:8888"
-URL="${LOCALHOST}${PROJECT_PATH}/${DIR_NAME}}"
+URL="${LOCALHOST}${PROJECT_PATH}/${DIR_NAME}"
 
 # prepare project path for unique db name
 PROJECT_PATH_FOR_DB=$PROJECT_PATH 
