@@ -1,10 +1,10 @@
 #!/bin/bash
 # Author: Andreas Geyer
-# Version: 0.1.0
+# Version: 0.1.1
 # Description: 
 # 5-Second WP Installation! Install a fresh WP ready for development 
 
-VERSION=0.1.0
+VERSION=0.1.1
 
 if ! hash wp 2>/dev/null; then echo "ERROR"; echo "WP CLI command not found"; exit 1
 fi
