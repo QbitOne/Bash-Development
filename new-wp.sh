@@ -6,6 +6,7 @@
 
 VERSION=0.1.1
 
+# check if wp cli is installed an can be used with 'wp' command
 if ! hash wp 2>/dev/null; then echo "ERROR"; echo "WP CLI command not found"; exit 1
 fi
 
