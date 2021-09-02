@@ -1,2 +1,7 @@
 # MacOS
 .DS_Store
+
+# Testing
+tests
+tests.sh
+wp-local-*
