@@ -11,13 +11,15 @@ if ! hash wp 2>/dev/null; then echo "ERROR"; echo "WP CLI command not found"; ex
 fi
 
 # check needed parameters
-if [ $# -lt 2 ]; then echo; echo "usage: $0 <project-code> <mamp-root-directory> [dir-name]"; echo; exit 1
+if [ $# -lt 1 ]; then echo; echo "usage: $0 <project-code> [dir-name]"; echo; exit 1
 fi
 
 # Project Code and File Structure
 PROJECT_CODE=$1
-MAMP_ROOT_DIR=$2
-DIR_NAME_PREFIX=${3-wp-local}
+DIR_NAME_PREFIX=${2-"wp-local"}
+
+# Get/define MAMP dir from .zshrc
+MAMP_ROOT_DIR=${MY_MAMP_ROOT_DIR:?"No global MAMP directory defined"}
 
 DIR_NAME="$DIR_NAME_PREFIX-$PROJECT_CODE"
 
