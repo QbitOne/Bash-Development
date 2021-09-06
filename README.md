@@ -8,7 +8,7 @@ In addition some functionalities of these scripts depend on a MacOS environment 
 
 ## Getting started
 
-Export your MAMP root directory e.g. from .zshrc vir
+Export your MAMP root directory e.g. from .zshrc via
 
 ```console
 foo@bar:~$ export MY_MAMP_ROOT_DIR='your-mamp-root-dir'
@@ -19,7 +19,7 @@ foo@bar:~$ export MY_MAMP_ROOT_DIR='your-mamp-root-dir'
 ### Create new WordPress System
 
 ```console
-foo@bar:~$ ./new-wp.sh <project-code> [dir-name]
+foo@bar:~$ ./new-wp.sh
 
 usage: ./new-wp.sh <project-code> [dir-name]
 ```
@@ -27,7 +27,7 @@ usage: ./new-wp.sh <project-code> [dir-name]
 ### Delete a WordPress System
 
 ```console
-foo@bar:~$ ./delete-wp.sh <project-code> [dir-name]
+foo@bar:~$ ./delete-wp.sh
 
 usage: ./delete-wp.sh <project-code> [dir-name]
 ```
