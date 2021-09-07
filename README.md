@@ -31,3 +31,17 @@ foo@bar:~$ ./delete-wp.sh
 
 usage: ./delete-wp.sh <project-code> [dir-name]
 ```
+
+### Fast usage with aliases
+
+Create aliases in e.g. .zshrc via
+
+```console
+new-wp() {
+    your/path/to/file/new-wp.sh $1 $2
+}
+
+delete-wp() {
+    your/path/to/file/delete-wp.sh $1 $2
+}
+```
