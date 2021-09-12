@@ -1,10 +1,10 @@
 #!/bin/bash
 # Author: Andreas Geyer
-# Version: 0.2.0
+# Version: 0.3.0
 # Description: 
 # 5-Second WP Installation! Install a fresh WP ready for development 
 
-VERSION=0.2.0
+VERSION=0.3.0
 
 # check if wp cli is installed an can be used with 'wp' command
 if ! hash wp 2>/dev/null; then echo "ERROR"; echo "WP CLI command not found"; exit 1
@@ -101,13 +101,33 @@ mkdir "$DIR_NAME"
     wp theme delete --all
     wp plugin delete --all 
 
+
+
+
+    # see https://linuxize.com/post/bash-printf-command/
+    printf "\nDo you want to install the default WP Plugins? [Y/n]: "
+    printf "\nThese are:"
+    printf "\n\t-> view-admin-as"
+    printf "\n\t-> query-monitor"
+    printf "\n\t-> advanced-custom-fields"
+    printf "\n\t-> enable-media-replace"
+    printf "\n\t-> contact-form-7"
+    echo; echo # blank lines
+    # https://linuxize.com/post/bash-read/
+    read -r -n 1
+    echo # blank line
+    # NOTE: colon in following line is import since we want a "yes"
+    # if no characater is submitted
+    if [[ ! ${REPLY:-Y} =~ ^[Yy]$ ]]; then echo "WARNING"; echo "Abort process..."; exit 1
+    fi
+
     # Install default plugins
-    # wp plugin install view-admin-as
-    # wp plugin install query-monitor --activate
-    # wp plugin install advanced-custom-fields
-    # wp plugin install enable-media-replace
-    # wp plugin install contact-form-7
-    
+    wp plugin install view-admin-as
+    wp plugin install query-monitor --activate
+    wp plugin install advanced-custom-fields
+    wp plugin install enable-media-replace
+    wp plugin install contact-form-7
+
 )
 
 exit 0
