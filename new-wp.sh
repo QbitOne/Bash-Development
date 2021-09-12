@@ -105,13 +105,13 @@ mkdir "$DIR_NAME"
 
 
     # see https://linuxize.com/post/bash-printf-command/
-    printf "\n Do you want to install the default WP Plugins? [Y/n]: "
-    echo "These are:"
-    printf "\n\t -> view-admin-as"
-    printf "\n\t -> query-monitor"
-    printf "\n\t -> advanced-custom-fields"
-    printf "\n\t -> enable-media-replace"
-    printf "\n\t -> contact-form-7"
+    printf "\nDo you want to install the default WP Plugins? [Y/n]: "
+    printf "\nThese are:"
+    printf "\n\t-> view-admin-as"
+    printf "\n\t-> query-monitor"
+    printf "\n\t-> advanced-custom-fields"
+    printf "\n\t-> enable-media-replace"
+    printf "\n\t-> contact-form-7"
     echo; echo # blank lines
     # https://linuxize.com/post/bash-read/
     read -r -n 1
