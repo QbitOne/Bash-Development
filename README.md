@@ -45,3 +45,13 @@ delete-wp() {
     your/path/to/file/delete-wp.sh $1 $2
 }
 ```
+
+## Default plugin installation
+
+After confirmation, following default plugins will be installed
+
+- [view-admin-as](https://wordpress.org/plugins/view-admin-as/)
+- [query-monitor](https://wordpress.org/plugins/query-monitor/)
+- [advanced-custom-fields](https://wordpress.org/plugins/advanced-custom-fields/)
+- [enable-media-replace](https://wordpress.org/plugins/enable-media-replace/)
+- [contact-form-7](https://wordpress.org/plugins/contact-form-7/)
