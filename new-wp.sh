@@ -101,13 +101,33 @@ mkdir "$DIR_NAME"
     wp theme delete --all
     wp plugin delete --all 
 
+
+
+
+    # see https://linuxize.com/post/bash-printf-command/
+    printf "\n Do you want to install the default WP Plugins? [Y/n]: "
+    echo "These are:"
+    printf "\n\t -> view-admin-as"
+    printf "\n\t -> query-monitor"
+    printf "\n\t -> advanced-custom-fields"
+    printf "\n\t -> enable-media-replace"
+    printf "\n\t -> contact-form-7"
+    echo; echo # blank lines
+    # https://linuxize.com/post/bash-read/
+    read -r -n 1
+    echo # blank line
+    # NOTE: colon in following line is import since we want a "yes"
+    # if no characater is submitted
+    if [[ ! ${REPLY:-Y} =~ ^[Yy]$ ]]; then echo "WARNING"; echo "Abort process..."; exit 1
+    fi
+
     # Install default plugins
-    # wp plugin install view-admin-as
-    # wp plugin install query-monitor --activate
-    # wp plugin install advanced-custom-fields
-    # wp plugin install enable-media-replace
-    # wp plugin install contact-form-7
-    
+    wp plugin install view-admin-as
+    wp plugin install query-monitor --activate
+    wp plugin install advanced-custom-fields
+    wp plugin install enable-media-replace
+    wp plugin install contact-form-7
+
 )
 
 exit 0
