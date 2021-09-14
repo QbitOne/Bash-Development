@@ -44,6 +44,10 @@ new-wp() {
 delete-wp() {
     your/path/to/file/delete-wp.sh $1 $2
 }
+
+remote-wp() {
+    your/path/to/file/remote-wp.sh $1 $2 $3 $4 $5
+}
 ```
 
 ## Default plugin installation
