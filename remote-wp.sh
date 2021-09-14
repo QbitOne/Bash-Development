@@ -1,24 +1,31 @@
 #!/bin/bash
 # Author: Andreas Geyer
-# Version: 0.1.0
+# Version: 0.1.1
 # Description: 
 # Remote WordPress migration via SSH
 
-VERSION=0.1.0
+VERSION=0.1.1
 
 # check if wp cli is installed an can be used with 'wp' command
 if ! hash wp 2>/dev/null; then echo "ERROR"; echo "WP CLI command not found"; exit 1
 fi
 
 # check needed parameters
-if [ $# -lt 4 ]; then echo; echo "usage: $0 <domain> <ssh-user> <remote-path> <project-code> [dir-name]"; echo; exit 1
+if [ $# -lt 3 ]; then 
+    echo; echo "usage: $0 <domain> <ssh-user> <project-code> [remote-path] [dir-name]"; echo; 
+    echo "<domain>          e.g. domain.de"
+    echo "<ssh-user>        e.g. user123"
+    echo "<project-code>    e.g. pjc"
+    echo "[remote-path]     -> /html/wordpress/"
+    echo "[dir-name]        -> wp-local"
+    echo; exit 1
 fi
 
 # Project Code and File Structure
 REMOTE_DOMAIN=$1
 SSH_USER=$2
-REMOTE_PATH=$3
-PROJECT_CODE=$4
+PROJECT_CODE=$3
+REMOTE_PATH=${4-"/html/wordpress/"}
 DIR_NAME_PREFIX=${5-"wp-local"}
 
 # Get/define MAMP dir from .zshrc
