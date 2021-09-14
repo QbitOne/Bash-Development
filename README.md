@@ -32,6 +32,20 @@ foo@bar:~$ ./delete-wp.sh
 usage: ./delete-wp.sh <project-code> [dir-name]
 ```
 
+### Migrate remote WordPress System
+
+```console
+foo@bar:~$ ./remote-wp.sh
+
+usage: ./remote-wp.sh <domain> <ssh-user> <project-code> [remote-path] [dir-name]
+
+<domain>          e.g. domain.de
+<ssh-user>        e.g. user123
+<project-code>    e.g. pjc
+[remote-path]     -> /html/wordpress/
+[dir-name]        -> wp-local
+```
+
 ### Fast usage with aliases
 
 Create aliases in e.g. .zshrc via
