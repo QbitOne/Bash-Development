@@ -13,7 +13,10 @@
 VERSION=0.1.1
 
 # check number of given parameters
-if [[ $# -lt 1 ]]; then echo; echo "usage: $0 <project-code> [dir-name]"; echo; exit 1
+if [[ $# -lt 1 ]]; then 
+    echo; echo "usage: $0 <project-code> [dir-name]"; 
+    echo; echo "you have to be in the directory where your project is stored"
+    echo; exit 1
 fi
 
 # Project Code and File Structure
