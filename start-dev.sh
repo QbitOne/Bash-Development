@@ -1,6 +1,6 @@
 #! /bin/bash
 # Author: Andreas Geyer
-# Version: 0.1.1
+# Version: 0.2.0
 
 # TODO Check if server(localhost) is running
 # TODO Check if 'open' command is present
