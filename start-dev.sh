@@ -10,7 +10,7 @@
 #   - open Jira project webpage (python(bs4))
 #   - provide auto WP login (python(bs4))
 
-VERSION=0.1.1
+VERSION=0.2.0
 
 # check number of given parameters
 if [[ $# -lt 1 ]]; then 
