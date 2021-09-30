@@ -46,6 +46,14 @@ usage: ./remote-wp.sh <domain> <ssh-user> <project-code> [remote-path] [dir-name
 [dir-name]        -> wp-local
 ```
 
+### Start local project
+
+```console
+foo@bar:~$ ./start-dev.sh
+
+usage: ./start-dev.sh <project-code> [dir-name]
+```
+
 ### Fast usage with aliases
 
 Create aliases in e.g. .zshrc via
@@ -61,6 +69,10 @@ delete-wp() {
 
 remote-wp() {
     your/path/to/file/remote-wp.sh $1 $2 $3 $4 $5
+}
+
+start-dev() {
+    your/path/to/file/start-dev.sh $1 $2
 }
 ```
 
